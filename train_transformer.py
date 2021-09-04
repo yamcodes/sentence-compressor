@@ -6,10 +6,10 @@ import argparse
 def train(config):
     model_config = f"--arch transformer --share-all-embeddings " \
                    f"--optimizer adam --lr {config.lr} --label-smoothing 0.1 --dropout {config.dropout} " \
-                   f"--attention-dropout {config.dropout} --max-tokens 4000 --min-lr '1e-09' --lr-scheduler inverse_sqrt " \
+                   f"--attention-dropout {config.dropout} --max-tokens 4000 --stop-min-lr \"1e-09\" --lr-scheduler inverse_sqrt " \
                    f"--weight-decay 0.0001 --criterion label_smoothed_cross_entropy " \
-                   f"--max-epoch {config.max_epoch} --warmup-updates 4000 --warmup-init-lr '1e-07' " \
-                   f"--adam-betas '(0.9, 0.98)' --save-interval-updates 5000 --clip-norm 0.1 " \
+                   f"--max-epoch {config.max_epoch} --warmup-updates 4000 --warmup-init-lr \"1e-07\" " \
+                   f"--adam-betas \"(0.9, 0.98)\" --save-interval-updates 5000 --clip-norm 0.1 " \
                    f"--share-decoder-input-output-embed --layernorm-embedding "
     train_prompt = f"fairseq-train {config.data_path} {model_config} --save-dir {config.ckpt} "
     os.system(train_prompt)

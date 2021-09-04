@@ -2,6 +2,7 @@
 import os
 import random
 import logging
+import gzip
 from typing import List
 
 import pandas as pd
@@ -19,15 +20,16 @@ def preprocess_google(mode: str, prefix: str, nums: List[str]):
         logging.info(f"{i+1}th JSON is being pre-processed...")
         tmp_src, tmp_tgt = list(), list()
 
-        with open(f"{prefix}{num}.json", "r") as f_json:
+        with gzip.open(f"{prefix}{num}.json.gz", "r") as f_json:
             lines = f_json.readlines()
             for line in lines:
                 line = line.strip()
-                idx = line.find(":")
-                if line.startswith('"sentence"'):
-                    tmp_src.append(line[idx + 3 : -2])
-                elif line.startswith('"text"'):
-                    tmp_tgt.append(line[idx + 3 : -2])
+                line_str = line.decode('utf-8')
+                idx = line_str.find(":")
+                if line_str.startswith('"sentence"'):
+                    tmp_src.append(line_str[idx + 3 : -2])
+                elif line_str.startswith('"text"'):
+                    tmp_tgt.append(line_str[idx + 3 : -2])
 
             assert len(tmp_src) == len(tmp_tgt), "Source and Target datasets should be parallel!"
 

@@ -6,3 +6,5 @@ bart.large
 *.json
 *.bpe
 *.out
+bart.large.tar.gz
+fairseq/

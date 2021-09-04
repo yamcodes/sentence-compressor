@@ -1,71 +1,127 @@
-2020-04-13 09:48:43 | INFO | fairseq_cli.interactive | Namespace(all_gather_list_size=16384, beam=4, bpe='gpt2', buffer_size=1, checkpoint_suffix='', cpu=False, criterion='cross_entropy', data='ckpt_transformer', dataset_impl=None, decoding_format=None, diverse_beam_groups=-1, diverse_beam_strength=0.5, diversity_rate=-1.0, empty_cache_freq=0, eval_bleu=False, eval_bleu_args=None, eval_bleu_detok='space', eval_bleu_detok_args=None, eval_bleu_print_samples=False, eval_bleu_remove_bpe=None, eval_tokenized_bleu=False, force_anneal=None, fp16=False, fp16_init_scale=128, fp16_no_flatten_grads=False, fp16_scale_tolerance=0.0, fp16_scale_window=None, gen_subset='test', gpt2_encoder_json='https://dl.fbaipublicfiles.com/fairseq/gpt2_bpe/encoder.json', gpt2_vocab_bpe='https://dl.fbaipublicfiles.com/fairseq/gpt2_bpe/vocab.bpe', input='output/input.txt', iter_decode_eos_penalty=0.0, iter_decode_force_max_iter=False, iter_decode_max_iter=10, iter_decode_with_beam=1, iter_decode_with_external_reranker=False, left_pad_source='True', left_pad_target='False', lenpen=2.0, load_alignments=False, log_format=None, log_interval=100, lr_scheduler='fixed', lr_shrink=0.1, match_source_len=False, max_len_a=0, max_len_b=200, max_sentences=1, max_source_positions=1024, max_target_positions=1024, max_tokens=None, memory_efficient_fp16=False, min_len=1, min_loss_scale=0.0001, model_overrides='{}', model_parallel_size=1, momentum=0.99, nbest=1, no_beamable_mm=False, no_early_stop=False, no_progress_bar=False, no_repeat_ngram_size=2, num_shards=1, num_workers=1, optimizer='nag', path='ckpt_transformer/checkpoint_best.pt', prefix_size=0, print_alignment=True, print_step=False, quiet=False, remove_bpe=None, replace_unk=None, required_batch_size_multiple=8, results_path=None, retain_iter_history=False, sacrebleu=False, sampling=False, sampling_topk=-1, sampling_topp=-1.0, score_reference=False, seed=1, shard_id=0, skip_invalid_size_inputs_valid_test=False, source_lang='source', target_lang='target', task='translation', temperature=0.9, tensorboard_logdir='', threshold_loss_scale=None, tokenizer=None, truncate_source=False, unkpen=0, unnormalized=False, upsample_primary=1, user_dir=None, warmup_updates=0, weight_decay=0.0)
-2020-04-13 09:48:43 | INFO | fairseq.tasks.translation | [source] dictionary: 50264 types
-2020-04-13 09:48:43 | INFO | fairseq.tasks.translation | [target] dictionary: 50264 types
-2020-04-13 09:48:43 | INFO | fairseq_cli.interactive | loading model(s) from ckpt_transformer/checkpoint_best.pt
-2020-04-13 09:48:58 | INFO | fairseq_cli.interactive | NOTE: hypothesis and token scores are output in base 2
-2020-04-13 09:48:58 | INFO | fairseq_cli.interactive | Type the input sentence and press return:
-S-0	10374 400 349 28030 5302 9908 20531 318 257 19812 2095 287 262 1605 15108 5581 2168 383 34376 290 636 286 262 20531 1641 13
-H-0	-0.04140269490991675	10374 400 349 28030 5302 9908 20531 318 287 262 1605 15108 13
-D-0	-0.04140269490991675	Bartholomew JoJo Simpson is in the American animated.
-P-0	-0.0423 -0.2215 -0.0038 -0.0499 -0.3319 -0.4374 -0.0603 -0.0488 -5.1316 -0.2352 -0.1618 -0.0759 -1.2834 -0.0313
-A-0	0-0 1-1 2-2 3-3 5-4 5-5 6-6 16-7 9-8 15-9 13-10 14-11 15-12
-S-1	1544 318 21346 416 18496 13690 29995 290 717 4120 319 5581 287 383 833 25415 471 297 805 5438 1790 366 10248 5265 1 319 3035 678 11 12923 13
-H-1	-0.03366555822350316	1544 318 21346 416 18496 13690 29995 13
-D-1	-0.03366555822350316	He is voiced by Nancy Cartwright.
-P-1	-0.1923 -0.0298 -0.0348 -0.3037 -0.1854 -0.0238 -0.0051 -1.9234 -0.0287
-A-1	0-0 2-1 2-2 3-3 4-4 5-5 6-6 9-7
-S-2	42921 3101 550 587 1444 284 7078 257 2168 286 22078 1912 319 465 9048 10283 11 5155 287 5783 11 475 2427 3066 284 2251 257 649 900 286 3435 13
-H-2	-0.030279405246809915	42921 3101 550 587 1444 284 7078 257 2168 13
-D-2	-0.030279405246809915	Groening had been called to pitch a series.
-P-2	-0.8229 -0.0097 -0.1050 -0.0176 -0.0187 -0.0765 -0.0023 -0.2767 -0.0026 -2.3105 -0.0213
-A-2	0-0 1-1 4-2 3-3 4-4 6-5 6-6 6-7 8-8 11-9
-S-3	3633 262 1334 286 262 3435 547 3706 706 10299 3101 338 1641 1866 11 13167 338 1438 318 281 281 6713 286 262 1573 865 265 13
-H-3	-0.04125509348704267	464 1334 547 3706 706 10299 3101 338 1641 1866 13
-D-3	-0.04125509348704267	The rest were named after Groening's family members.
-P-3	-3.0113 -0.0843 -1.9579 -0.0107 -0.6328 -0.0023 -0.0028 -0.0262 -0.0057 -0.0304 -0.1454 -0.0308
-A-3	15-0 2-1 6-2 7-3 8-4 9-5 10-6 11-7 12-8 13-9 15-10
-S-4	3260 12655 319 383 833 25415 471 297 805 5438 329 1115 812 11 262 20531 1641 2722 663 898 2168 319 5426 11 543 26376 3426 1596 11 11104 13
-H-4	-0.051812729524232805	464 20531 2722 663 898 2168 319 5426 13
-D-4	-0.051812729524232805	The Simpson received its own series on Fox.
-P-4	-0.2348 -0.0013 -1.4692 -0.2104 -0.1518 -0.0016 -2.0797 -0.0505 -0.9457 -0.0363
-A-4	6-0 15-1 16-2 18-3 20-4 20-5 20-6 22-7 25-8
-S-5	2953 3478 812 1468 11 13167 318 262 34331 1200 290 691 3367 286 28440 290 337 1376 11 290 262 3956 286 15378 290 33014 13
-H-5	-0.08446178160258241	464 3478 812 318 13167 318 262 3956 286 8345 286 337 1376 13
-D-5	-0.08446178160258241	The ten years is Bart is the brother of Eastern of Marge.
-P-5	-1.8537 -0.0082 -0.0023 -0.7710 -2.9363 -0.0963 -0.3571 -0.2237 -0.2152 -5.3614 -0.5126 -5.8681 -0.0507 -0.7053 -0.0419
-A-5	5-0 1-1 2-2 3-3 5-4 5-5 5-6 21-7 9-8 14-9 23-10 25-11 17-12 23-13
-S-6	33 433 338 749 9208 290 2968 2095 12796 389 465 2984 3043 31222 1108 11 43860 1108 290 23797 329 4934 13
-H-6	-0.10982115554362966	33 433 338 468 9208 389 465 2984 3043 13
-D-6	-0.10982115554362966	Bart's has prominent are his mischie.
-P-6	-0.0711 -0.0035 -0.1410 -4.2766 -0.5501 -1.6990 -1.0399 -0.1769 -0.1786 -5.1338 -0.0179
-A-6	0-0 1-1 2-2 8-3 4-4 8-5 10-6 12-7 12-8 13-9
-S-7	1544 468 4120 287 584 2056 11270 284 383 34376 784 1390 2008 1830 11 383 34376 15875 11 383 34376 21640 11 30503 11 290 9048 3835 784 290 7867 281 2104 1627 286 20813 13
-H-7	-0.04393411829688211	1544 468 4120 287 584 2056 11270 13
-D-7	-0.04393411829688211	He has appeared in other media relating.
-P-7	-0.4820 -0.0150 -0.0098 -0.2460 -0.1151 -0.1232 -0.7795 -1.7608 -0.0273
-A-7	0-0 1-1 2-2 11-3 4-4 5-5 6-6 6-7
-S-8	818 13092 11 18496 13690 29995 6198 6027 284 31678 329 262 2597 286 15378 11 981 11609 446 1636 4176 3088 503 329 13167 13
-H-8	-0.08604268912497606	464 2597 286 15378 11 981 11609 446 1636 1636 4176 4176 11 13167 13
-D-8	-0.08604268912497606	The role of Lisa, while Yeardleyley Smith Smith, Bart.
-P-8	-4.4059 -0.0065 -0.4866 -0.0465 -1.5028 -1.7711 -0.2619 -0.6190 -0.1169 -1.7154 -0.8826 -1.3768 -5.1157 -2.9063 -0.5197 -0.2932
-A-8	0-0 12-1 7-2 14-3 15-4 16-5 17-6 18-7 19-8 20-9 20-10 20-11 20-12 24-13 25-14
-S-9	34194 14306 286 262 2095 2291 465 30860 3526 308 3775 287 262 4756 8379 26 465 33401 3848 284 46488 26 290 465 4929 746 81 1386 366 47659 616 22078 1600 366 126 94 42012 11 1097 31842 40754 366 3987 470 423 257 9875 11 582 40754 290 366 40 1101 13167 20531 13 5338 262 5968 389 345 43634
-H-9	-0.08566400482560751	34194 14306 286 262 2095 2291 465 30860 3526 3526 13
-D-9	-0.08566400482560751	Hallmarks of the character include his chalkboardboard.
-P-9	-0.0645 -0.0261 -0.8119 -0.1016 -0.0043 -0.0012 -0.1288 -7.4838 -0.0286 -0.8452 -2.8015 -0.0382
-A-9	0-0 1-1 5-2 5-3 4-4 5-5 6-6 7-7 8-8 8-9 8-10
-S-10	7191 262 717 734 7028 286 383 34376 11 13167 373 262 905 338 31661 2095 290 366 33 433 45733 1 38597 11 38896 13167 20531 12 26966 20813 48120 465 43860 9408 290 11293 379 739 620 30749 11 543 4073 867 3397 290 30770 284 3350 683 355 257 2089 2597 2746 329 1751 13
-H-10	-0.08920361738421986	464 34376 13167 373 262 905 338 31661 2095 13
-D-10	-0.08920361738421986	The Simpsons Bart was the show's breakout character.
-P-10	-1.6609 -0.4111 -2.9653 -0.1307 -0.5641 -0.0022 -0.2888 -1.5624 -1.8189 -1.3631 -0.0261
-A-10	0-0 7-1 9-2 9-3 9-4 12-5 13-6 14-7 15-8 15-9
-S-11	24472 262 2368 1622 11 262 2168 2067 284 2962 517 319 262 1641 355 257 2187 11 996 13167 991 3793 257 9208 2095 13 3862 3706 13167 530 286 262 1802 749 1593 661 286 262 1160 400 4289 11 290 339 373 3706 366 298 1425 263 286 262 614 1 287 6303 416 11058 18168 13
-H-11	-0.056607890676553405	24472 262 2368 1622 373 531 284 2962 517 319 262 1641 13
-D-11	-0.056607890676553405	Around the third season was said to focus more on the family.
-P-11	-0.0570 -0.7345 -0.0297 -0.0086 -1.8893 -2.7337 -0.3226 -0.0053 -0.2608 -3.8945 -0.1856 -0.0068 -0.8986 -0.0683
-A-11	0-0 7-1 2-2 3-3 27-4 7-5 10-6 9-7 10-8 17-9 18-10 13-11 14-12
-S-12	45 3883 13690 29995 468 1839 1811 13304 329 47640 13167 11 1390 257 11460 8079 33953 11289 287 9768 290 281 25860 11289 287 8735 13
-H-12	-0.009044347256103688	45 3883 13690 29995 468 1839 1811 13304 13
-D-12	-0.009044347256103688	Nancy Cartwright has won several awards.
-P-12	-0.0084 -0.0082 -0.0319 -0.0879 -0.0491 -0.0058 -0.1373 -0.0071 -0.5493 -0.0194
-A-12	0-0 1-1 2-2 3-3 5-4 5-5 6-6 7-7 7-8
+2021-09-04 17:01:56 | INFO | fairseq_cli.interactive | {'_name': None, 'common': {'_name': None, 'no_progress_bar': False, 'log_interval': 100, 'log_format': None, 'log_file': None, 'tensorboard_logdir': None, 'wandb_project': None, 'azureml_logging': False, 'seed': 1, 'cpu': False, 'tpu': False, 'bf16': False, 'memory_efficient_bf16': False, 'fp16': False, 'memory_efficient_fp16': False, 'fp16_no_flatten_grads': False, 'fp16_init_scale': 128, 'fp16_scale_window': None, 'fp16_scale_tolerance': 0.0, 'on_cpu_convert_precision': False, 'min_loss_scale': 0.0001, 'threshold_loss_scale': None, 'amp': False, 'amp_batch_retries': 2, 'amp_init_scale': 128, 'amp_scale_window': None, 'user_dir': None, 'empty_cache_freq': 0, 'all_gather_list_size': 16384, 'model_parallel_size': 1, 'quantization_config_path': None, 'profile': False, 'reset_logging': False, 'suppress_crashes': False, 'use_plasma_view': False, 'plasma_path': '/tmp/plasma'}, 'common_eval': {'_name': None, 'path': 'ckpt_transformer/checkpoint_best.pt', 'post_process': None, 'quiet': False, 'model_overrides': '{}', 'results_path': None}, 'distributed_training': {'_name': None, 'distributed_world_size': 1, 'distributed_num_procs': 1, 'distributed_rank': 0, 'distributed_backend': 'nccl', 'distributed_init_method': None, 'distributed_port': -1, 'device_id': 0, 'distributed_no_spawn': False, 'ddp_backend': 'pytorch_ddp', 'ddp_comm_hook': 'none', 'bucket_cap_mb': 25, 'fix_batches_to_gpus': False, 'find_unused_parameters': False, 'fast_stat_sync': False, 'heartbeat_timeout': -1, 'broadcast_buffers': False, 'slowmo_momentum': None, 'slowmo_algorithm': 'LocalSGD', 'localsgd_frequency': 3, 'nprocs_per_node': 1, 'pipeline_model_parallel': False, 'pipeline_balance': None, 'pipeline_devices': None, 'pipeline_chunks': 0, 'pipeline_encoder_balance': None, 'pipeline_encoder_devices': None, 'pipeline_decoder_balance': None, 'pipeline_decoder_devices': None, 'pipeline_checkpoint': 'never', 'zero_sharding': 'none', 'fp16': False, 'memory_efficient_fp16': False, 'tpu': False, 'no_reshard_after_forward': False, 'fp32_reduce_scatter': False, 'cpu_offload': False, 'use_sharded_state': False}, 'dataset': {'_name': None, 'num_workers': 1, 'skip_invalid_size_inputs_valid_test': False, 'max_tokens': None, 'batch_size': 1, 'required_batch_size_multiple': 8, 'required_seq_len_multiple': 1, 'dataset_impl': None, 'data_buffer_size': 10, 'train_subset': 'train', 'valid_subset': 'valid', 'combine_valid_subsets': None, 'ignore_unused_valid_subsets': False, 'validate_interval': 1, 'validate_interval_updates': 0, 'validate_after_updates': 0, 'fixed_validation_seed': None, 'disable_validation': False, 'max_tokens_valid': None, 'batch_size_valid': None, 'max_valid_steps': None, 'curriculum': 0, 'gen_subset': 'test', 'num_shards': 1, 'shard_id': 0}, 'optimization': {'_name': None, 'max_epoch': 0, 'max_update': 0, 'stop_time_hours': 0.0, 'clip_norm': 0.0, 'sentence_avg': False, 'update_freq': [1], 'lr': [0.25], 'stop_min_lr': -1.0, 'use_bmuf': False}, 'checkpoint': {'_name': None, 'save_dir': 'checkpoints', 'restore_file': 'checkpoint_last.pt', 'finetune_from_model': None, 'reset_dataloader': False, 'reset_lr_scheduler': False, 'reset_meters': False, 'reset_optimizer': False, 'optimizer_overrides': '{}', 'save_interval': 1, 'save_interval_updates': 0, 'keep_interval_updates': -1, 'keep_interval_updates_pattern': -1, 'keep_last_epochs': -1, 'keep_best_checkpoints': -1, 'no_save': False, 'no_epoch_checkpoints': False, 'no_last_checkpoints': False, 'no_save_optimizer_state': False, 'best_checkpoint_metric': 'loss', 'maximize_best_checkpoint_metric': False, 'patience': -1, 'checkpoint_suffix': '', 'checkpoint_shard_count': 1, 'load_checkpoint_on_all_dp_ranks': False, 'write_checkpoints_asynchronously': False, 'model_parallel_size': 1}, 'bmuf': {'_name': None, 'block_lr': 1.0, 'block_momentum': 0.875, 'global_sync_iter': 50, 'warmup_iterations': 500, 'use_nbm': False, 'average_sync': False, 'distributed_world_size': 1}, 'generation': {'_name': None, 'beam': 4, 'nbest': 1, 'max_len_a': 0.0, 'max_len_b': 200, 'min_len': 1, 'match_source_len': False, 'unnormalized': False, 'no_early_stop': False, 'no_beamable_mm': False, 'lenpen': 2.0, 'unkpen': 0.0, 'replace_unk': None, 'sacrebleu': False, 'score_reference': False, 'prefix_size': 0, 'no_repeat_ngram_size': 2, 'sampling': False, 'sampling_topk': -1, 'sampling_topp': -1.0, 'constraints': None, 'temperature': 0.9, 'diverse_beam_groups': -1, 'diverse_beam_strength': 0.5, 'diversity_rate': -1.0, 'print_alignment': 'hard', 'print_step': False, 'lm_path': None, 'lm_weight': 0.0, 'iter_decode_eos_penalty': 0.0, 'iter_decode_max_iter': 10, 'iter_decode_force_max_iter': False, 'iter_decode_with_beam': 1, 'iter_decode_with_external_reranker': False, 'retain_iter_history': False, 'retain_dropout': False, 'retain_dropout_modules': None, 'decoding_format': None, 'no_seed_provided': False}, 'eval_lm': {'_name': None, 'output_word_probs': False, 'output_word_stats': False, 'context_window': 0, 'softmax_batch': 9223372036854775807}, 'interactive': {'_name': None, 'buffer_size': 1, 'input': 'output/input.txt'}, 'model': None, 'task': {'_name': 'translation', 'data': 'data-bin', 'source_lang': 'source', 'target_lang': 'target', 'load_alignments': False, 'left_pad_source': True, 'left_pad_target': False, 'max_source_positions': 1024, 'max_target_positions': 1024, 'upsample_primary': -1, 'truncate_source': False, 'num_batch_buckets': 0, 'train_subset': 'train', 'dataset_impl': None, 'required_seq_len_multiple': 1, 'eval_bleu': False, 'eval_bleu_args': '{}', 'eval_bleu_detok': 'space', 'eval_bleu_detok_args': '{}', 'eval_tokenized_bleu': False, 'eval_bleu_remove_bpe': None, 'eval_bleu_print_samples': False}, 'criterion': {'_name': 'cross_entropy', 'sentence_avg': True}, 'optimizer': None, 'lr_scheduler': {'_name': 'fixed', 'force_anneal': None, 'lr_shrink': 0.1, 'warmup_updates': 0, 'lr': [0.25]}, 'scoring': {'_name': 'bleu', 'pad': 1, 'eos': 2, 'unk': 3}, 'bpe': {'_name': 'gpt2', 'gpt2_encoder_json': 'https://dl.fbaipublicfiles.com/fairseq/gpt2_bpe/encoder.json', 'gpt2_vocab_bpe': 'https://dl.fbaipublicfiles.com/fairseq/gpt2_bpe/vocab.bpe'}, 'tokenizer': None, 'ema': {'_name': None, 'store_ema': False, 'ema_decay': 0.9999, 'ema_start_update': 0, 'ema_seed_model': None, 'ema_update_freq': 1, 'ema_fp32': False}}
+2021-09-04 17:01:56 | INFO | fairseq.tasks.translation | [source] dictionary: 50264 types
+2021-09-04 17:01:56 | INFO | fairseq.tasks.translation | [target] dictionary: 50264 types
+2021-09-04 17:01:56 | INFO | fairseq_cli.interactive | loading model(s) from ckpt_transformer/checkpoint_best.pt
+2021-09-04 17:02:01 | INFO | fairseq_cli.interactive | NOTE: hypothesis and token scores are output in base 2
+2021-09-04 17:02:01 | INFO | fairseq_cli.interactive | Type the input sentence and press return:
+S-0	1925 37093 43548 276 734 20280 1023 379 262 10140 5136 286 8987 357 36393 828 14433 367 6765 290 7993 25845 672 1559 11 262 6846 286 4150 13659 683 281 8796 6240 2292 612 287 25325 13
+W-0	0.875	seconds
+H-0	-0.06493478268384933	464 10140 5136 286 8987 11 290 7993 25845 672 1559 13
+D-0	-0.06493478268384933	The Massachusetts Institute of Technology, and Roman Jakobson.
+P-0	-5.7011 -0.1182 -0.0037 -0.2389 -0.0023 -0.6829 -2.2914 -0.0113 -1.6572 -0.0053 -0.0015 -0.2359 -0.0242
+A-0	0-0 5-1 10-2 15-3 12-4 15-5 14-6 20-7 21-8 22-9 23-10 29-11
+S-1	2953 17168 11 41057 3377 2063 465 640 319 257 12370 11059 1628 290 2063 7743 257 1781 319 20280 3969 290 8876 13
+W-1	0.223	seconds
+H-1	-0.06546367704868317	2953 17168 3377 465 640 319 257 12370 11059 1628 7743 257 1781 13
+D-1	-0.06546367704868317	At MIT spent his time on a mechanical translation project teaching a course.
+P-1	-0.8950 -0.0025 -4.0577 -1.0707 -0.0020 -0.0259 -0.0292 -0.1173 -4.3336 -0.0075 -1.9730 -0.2666 -0.0022 -1.9262 -0.0197
+A-1	0-0 1-1 3-2 5-3 7-4 11-5 9-6 11-7 11-8 12-9 15-10 16-11 17-12 18-13
+S-2	1544 3417 17168 355 366 64 2495 1479 290 1280 1295 11 1280 284 29315 290 1231 20831 5359 13
+W-2	0.160	seconds
+H-2	-0.026430634781718254	1544 3417 17168 355 366 64 2495 1479 1295 13
+D-2	-0.026430634781718254	He described MIT as "a pretty free place.
+P-2	-0.0096 -0.0252 -0.0610 -0.0187 -0.0570 -0.0142 -0.4817 -0.0134 -1.3916 -1.1032 -0.0224
+A-2	0-0 1-1 2-2 3-3 4-4 5-5 6-6 7-7 10-8 12-9
+S-3	1026 373 655 2818 329 2130 286 616 49875 1512 5353 290 670 526
+W-3	0.141	seconds
+H-3	-0.11105310171842575	1026 373 2818 329 2130 290 670 526
+D-3	-0.11105310171842575	It was perfect for someone and work."
+P-3	-0.0197 -0.0279 -0.0182 -0.0480 -0.0036 -8.8032 -0.0048 -0.0468 -0.0232
+A-3	0-0 1-1 3-2 3-3 5-4 6-5 12-6 13-7
+S-4	818 25177 17168 13722 683 284 262 2292 286 11602 6240 11 290 422 25177 284 24648 339 373 635 9322 416 9309 2059 355 257 10013 6240 13
+W-4	0.198	seconds
+H-4	-0.007697857450693846	818 25177 17168 13722 683 284 262 2292 286 11602 6240 13
+D-4	-0.007697857450693846	In 1957 MIT promoted him to the position of associate professor.
+P-4	-0.0086 -0.7387 -0.0059 -0.0668 -0.0204 -0.2006 -0.0340 -0.0054 -0.0268 -0.0030 -0.0013 -0.1671 -0.0224
+A-4	1-0 1-1 2-2 3-3 4-4 5-5 6-6 7-7 9-8 9-9 10-10 11-11
+S-5	464 609 3150 74 893 550 511 717 1200 326 976 614 11 257 4957 3706 5184 12151 13 679 635 3199 465 717 1492 319 20280 3969 11 26375 12009 32112 942 11 257 670 326 25330 6886 262 11410 10026 1906 38941 3245 5182 287 262 2214 13
+W-5	0.243	seconds
+H-5	-0.014158316887915134	464 609 3150 74 893 550 511 717 1200 326 976 614 13
+D-5	-0.014158316887915134	The Chomskys had their first child that same year.
+P-5	-0.3099 -0.0265 -0.0009 -0.0067 -0.0014 -0.0993 -0.1553 -0.0057 -0.0399 -1.5307 -0.1802 -0.0331 -0.3585 -0.0270
+A-5	0-0 1-1 2-2 3-3 4-4 5-5 6-6 8-7 8-8 10-9 10-10 11-11 12-12
+S-6	19309 684 274 284 41057 338 4213 17929 422 34324 284 23594 11 290 465 670 8302 29656 290 4073 366 36591 46907 1 287 262 12883 13
+W-6	0.228	seconds
+H-6	-0.07409051060676575	32 684 274 11 8302 29656 290 4073 366 36591 1 287 262 12883 13
+D-6	-0.07409051060676575	Aonses, proved divisive and caused "significant" in the discipline.
+P-6	-8.7411 -0.7753 -0.0074 -3.3428 -0.6454 -0.0176 -0.3411 -0.0486 -0.2236 -0.1626 -3.9415 -0.4231 -0.0349 -0.0000 -0.2404 -0.0216
+A-6	0-0 1-1 2-2 16-3 16-4 17-5 17-6 19-7 20-8 21-9 22-10 23-11 25-12 26-13 26-14
+S-7	464 20280 396 1757 43728 1568 21635 326 26375 12009 32112 942 366 32243 1143 262 5654 2050 286 3303 447 251 13
+W-7	0.190	seconds
+H-7	-0.19824138283729553	464 20280 396 1757 2151 1568 21635 326 290 13
+D-7	-0.19824138283729553	The linguist John party later asserted that and.
+P-7	-1.1859 -0.3147 -0.0034 -0.0065 -8.1418 -0.7242 -0.0596 -0.1361 -5.5073 -7.0714 -0.8364
+A-7	8-0 1-1 2-2 3-3 4-4 6-5 6-6 6-7 8-8 9-9
+S-8	4863 24648 284 23859 41057 373 257 2351 5800 5693 5891 379 262 5136 329 13435 12481 287 23173 11 968 8221 13
+W-8	0.176	seconds
+H-8	-0.07188259810209274	32 2351 5800 5693 5891 379 262 5136 329 13435 13
+D-8	-0.07188259810209274	A National Science Foundation fellow at the Institute for Advanced.
+P-8	-7.7146 -0.2208 -0.0011 -0.0017 -0.2842 -0.5149 -0.0326 -0.0006 -0.2858 -0.0001 -1.2645 -0.0301
+A-8	0-0 7-1 8-2 9-3 10-4 14-5 18-6 13-7 14-8 15-9 17-10
+S-9	818 23859 11 41057 3199 257 2423 286 347 13 376 13 42899 338 25177 1492 4643 6893 20181 287 262 8233 3989 15417 11 287 543 339 7189 1028 42899 338 1570 286 3303 355 4499 4069 13
+W-9	0.196	seconds
+H-9	-0.07296856492757797	1544 7189 1028 42899 338 3303 355 4499 4069 13
+D-9	-0.07296856492757797	He argued against Skinner's language as learned behavior.
+P-9	-5.3515 -0.0060 -0.0379 -0.2019 -0.4054 -0.5727 -2.1696 -0.0050 -0.0033 -0.0534 -0.0224
+A-9	3-0 28-1 29-2 30-3 36-4 14-5 36-6 36-7 37-8 37-9
+S-10	464 2423 7189 326 42899 9514 262 2597 286 1692 16389 287 20280 3969 290 4193 284 4474 41057 355 281 9028 13
+W-10	0.216	seconds
+H-10	-0.05714014545083046	464 2423 7189 42899 9514 262 2597 286 1692 3357 287 20280 3969 13
+D-10	-0.05714014545083046	The review argued Skinner ignored the role of human practice in linguistics.
+P-10	-2.9683 -0.0028 -0.0003 -1.4402 -0.0169 -0.2029 -0.0033 -0.0301 -0.0043 -7.3952 -0.5519 -0.0819 -0.0043 -0.1329 -0.0212
+A-10	4-0 1-1 2-2 4-3 5-4 6-5 7-6 8-7 9-8 10-9 13-10 12-11 13-12 15-13
+S-11	3152 367 6765 11 41057 18814 284 1043 17168 338 10428 1430 287 20280 3969 13
+W-11	0.218	seconds
+H-11	-0.04528755694627762	3152 367 6765 11 582 284 1043 17168 338 10428 1430 287 20280 3969 13
+D-11	-0.04528755694627762	With Halle, man to found MIT's graduate program in linguistics.
+P-11	-1.6252 -0.0291 -0.0022 -0.1117 -8.7685 -0.0556 -0.0232 -0.0151 -0.0719 -0.0003 -0.0101 -0.7756 -0.0499 -0.0022 -0.0321 -0.0208
+A-11	4-0 1-1 2-2 4-3 4-4 13-5 7-6 8-7 10-8 10-9 11-10 12-11 13-12 14-13 3-14
+S-12	818 20510 339 373 11343 17081 11 5033 257 1336 6240 287 262 2732 286 12495 42860 290 406 6680 3969 13
+W-12	0.162	seconds
+H-12	-0.07114963978528976	1544 373 11343 17081 11 5033 257 6240 13
+D-12	-0.07114963978528976	He was awarded tenure, becoming a professor.
+P-12	-2.2162 -0.0319 -0.0017 -0.0001 -2.0529 -0.0037 -0.0481 -1.4766 -1.2631 -0.0208
+A-12	0-0 3-1 4-2 5-3 7-4 7-5 8-6 9-7 11-8
+S-13	1925 37093 1816 319 284 307 9899 458 21629 10834 379 262 32547 4037 3162 286 406 6680 1023 11 2714 287 20033 287 14457 11 10140 11 543 4920 683 355 262 390 26126 11821 286 1605 20280 3969 13
+W-13	0.170	seconds
+H-13	-0.10008525103330612	1925 3431 1816 319 284 307 9899 458 21629 13
+D-13	-0.10008525103330612	Ch Tuesday went on to be appointed plenary.
+P-13	-0.0281 -10.3689 -0.0115 -0.8785 -0.0428 -0.0157 -0.0024 -0.0074 -0.0008 -0.7315 -0.0227
+A-13	0-0 1-1 2-2 3-3 4-4 5-5 6-6 7-7 8-8 9-9
+S-14	25262 19342 290 17672 339 26889 319 257 2422 12 25427 1628 366 1462 4474 3288 3303 355 281 13919 3303 329 3141 290 1630 8172 16685 2142 1453 11 257 50160 319 428 1628 290 788 12 50139 286 41057 11 468 531 428 2267 373 14460 284 262 2422 319 262 4308 326 366 259 262 1785 286 257 4523 1175 11 262 26770 561 307 11447 351 617 9061 2111 284 6687 1243 11 290 326 340 561 2192 307 4577 284 4545 9061 284 1833 3594 621 284 4545 262 26770 284 1430 13 447 251
+W-14	0.208	seconds
+H-14	-0.07230251282453537	25262 19342 468 531 428 2267 373 14460 284 307 262 2422 13
+D-14	-0.07230251282453537	Between 1963 has said this research was justified to be the military.
+P-14	-0.0369 -0.2170 -5.5467 -0.0350 -0.6170 -0.3813 -0.8761 -0.9565 -0.5648 -0.5139 -2.2308 -0.1460 -1.9922 -0.0570
+A-14	0-0 1-1 1-2 43-3 45-4 45-5 46-6 47-7 47-8 74-9 72-10 50-11 65-12
+S-15	1925 37093 3767 284 7715 465 29929 4213 3690 262 5707 11 1390 287 1081 38046 286 262 17003 286 26375 897 357 45271 828 34440 287 262 17003 286 2980 876 20159 3876 357 44227 828 290 13690 35610 406 6680 3969 25 317 7006 287 262 7443 286 46863 396 27522 357 44227 737
+W-15	0.190	seconds
+H-15	-0.11312229931354523	1925 3431 3767 284 7715 465 4213 3690 262 5707 13
+D-15	-0.11312229931354523	Ch Tuesday continued to publish his ideas throughout the decade.
+P-15	-0.0218 -11.1052 -0.0426 -0.0373 -0.0107 -0.1286 -4.1577 -0.3756 -0.0533 -0.0031 -0.3271 -0.0265
+A-15	0-0 1-1 2-2 3-3 4-4 5-5 6-6 8-7 9-8 10-9 18-10
+S-16	24035 351 367 6765 11 339 635 13012 262 10422 287 15417 2168 286 3835 329 12686 290 11314 13
+W-16	0.151	seconds
+H-16	-0.03708381950855255	1544 13012 262 10422 287 15417 2168 286 3835 13
+D-16	-0.03708381950855255	He edited the Studies in Language series of books.
+P-16	-0.0930 -1.2744 -0.1713 -0.0005 -0.7204 -0.0208 -0.0031 -0.7327 -0.0011 -1.4499 -0.0200
+A-16	0-0 7-1 8-2 9-3 15-4 11-5 12-6 15-7 14-8 15-9
+S-17	1722 339 2540 284 697 24508 2383 8233 9465 290 25279 329 465 670 11 41057 11042 1522 379 262 2059 286 3442 11 14727 11 287 19322 13
+W-17	0.142	seconds
+H-17	-0.07857491821050644	1722 339 2540 290 25279 329 465 670 13
+D-17	-0.07857491821050644	As he began and honors for his work.
+P-17	-0.3112 -0.0414 -0.0116 -5.5423 -0.0012 -0.6609 -0.0420 -0.0159 -1.2078 -0.0232
+A-17	0-0 1-1 2-2 3-3 10-4 18-5 12-6 13-7 14-8
+S-18	6653 11739 805 25917 379 14727 547 16030 290 3199 355 15417 290 10175 287 15963 13
+W-18	0.215	seconds
+H-18	-0.05090799927711487	6653 11739 805 7308 547 16030 355 15417 290 10175 287 15963 13
+D-18	-0.05090799927711487	His Beckman Base were assembled as Language and Mind in 1968.
+P-18	-0.0242 -0.0016 -0.0191 -7.4546 -0.1798 -0.1556 -1.1186 -0.0199 -0.2621 -0.0792 -0.5805 -0.0116 -0.0498 -0.0215
+A-18	0-0 1-1 2-2 3-3 3-4 7-5 9-6 11-7 12-8 13-9 14-10 15-11 15-12
+S-19	8332 465 3957 32600 11 281 9028 7463 12 448 1022 41057 290 617 286 465 1903 7810 290 40995 2444 960 8201 3362 32881 11 1757 366 39 1228 1 9847 11 4502 30392 2364 11 290 3700 360 13 5108 707 1636 960 2213 328 10446 257 2168 286 8233 15389 326 1625 284 307 1900 355 262 366 43 6680 3969 6176 1600 3584 484 2710 5634 5688 1088 17580 2428 2138 621 20280 3969 1774 13
+W-19	0.179	seconds
+H-19	-0.031769782304763794	7554 366 39 1228 1 9847 11 4502 30392 2364 13
+D-19	-0.031769782304763794	John "Haj" Ross, George Lakoff.
+P-19	-0.1365 -0.3211 -0.0028 -0.0087 -0.1618 -0.0109 -1.1675 -0.0182 -0.0499 -0.0095 -2.4879 -0.1999
+A-19	0-0 27-1 28-2 29-3 30-4 31-5 54-6 33-7 34-8 35-9 36-10
+2021-09-04 17:02:06 | INFO | fairseq_cli.interactive | Total time: 10.017 seconds; translation time: 4.480
